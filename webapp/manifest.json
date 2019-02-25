@@ -1,0 +1,69 @@
+{
+  "_version": "1.12.0",
+  "sap.app": {
+    "id": "sap.ui.app.travel",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "sap.ui.app.travel.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "sap"
+    },
+    "dependencies": {
+      "minUI5Version": "1.60",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "sap.ui.app.travel.i18n.i18n"
+        }
+      }
+    },
+    "routing":{
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "sap.ui.app.travel.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "async": true
+      },
+      "routes":[
+        {
+          "pattern":"",
+          "name":"request",
+          "target":"request"
+        }
+        
+      ],
+      "targets":
+      {
+        "request":{
+          "viewId":"request",
+          "viewName":"Request"
+        }
+      }
+    }
+  }
+}

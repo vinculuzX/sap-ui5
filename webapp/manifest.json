@@ -23,7 +23,7 @@
       "viewName": "sap.ui.app.travel.view.App",
       "type": "XML",
       "async": true,
-      "id": "sap"
+      "id": "app"
     },
     "dependencies": {
       "minUI5Version": "1.60",
@@ -53,7 +53,8 @@
         {
           "pattern":"",
           "name":"request",
-          "target":"request"
+          "target":"request",
+          "targetControl":"ScrollContainer"
         }
         
       ],
@@ -64,6 +65,13 @@
           "viewName":"Request"
         }
       }
-    }
+    },
+    "resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		}
   }
 }

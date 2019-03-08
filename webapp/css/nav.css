@@ -1,0 +1,33 @@
+header {
+  height: 4em; }
+  header .sapTntToolHeader.sapMTB {
+    height: 4rem; }
+  header .navContainerBlock {
+    width: 100%;
+    padding: 17px 5px; }
+  header .navTitle {
+    color: #ffffff !important;
+    text-transform: uppercase;
+    margin-left: 3vw !important; }
+  header .navButton {
+    color: #ffffff !important;
+    font-size: 12px !important;
+    height: 4.725em; }
+    header .navButton > span {
+      display: inline !important; }
+      header .navButton > span .sapMBtnIcon {
+        line-height: 1.5rem; }
+      header .navButton > span > span {
+        margin: 5px 7px; }
+        header .navButton > span > span bdi {
+          color: #FFFFFF; }
+      header .navButton > span .sapUiIcon::before {
+        font-size: 22px;
+        color: #FFFFFF; }
+  header .navNotification {
+    margin-left: 3.725em;
+    margin-bottom: 0.455em; }
+    header .navNotification .sapUiIcon::before {
+      background-color: #116464 !important;
+      border-radius: 50%;
+      padding: 12px 14px; }

@@ -1,6 +1,7 @@
+'use strict';
 var gulp  = require('gulp');
 var sass = require('gulp-sass');
-var livereload = require('gulp-livereload');
+var browserSync =  require('browser-sync').create();
 
 // Directory configuration
 var rootDirectory = 'webapp/' ;
@@ -14,20 +15,16 @@ gulp.task('sass',()=>{
     return gulp.src(sassDir)
     .pipe(sass())
     .pipe(gulp.dest(cssDir))
-    .pipe(livereload())
+    .pipe(browserSync.stream())
 })
 
-gulp.task('default',()=>{
-    livereload.reload();
-    gulp.watch(sassDir , gulp.parallel('sass'));
-    gulp.watch(viewDir,()=>{
-        gulp.src(viewDir).pipe(livereload())
-    })
-    gulp.watch(controllerDir,()=>{
-        gulp.src(controllerDir).pipe(livereload())
-    })
-    gulp.watch(modelDir,()=>{
-        gulp.src(modelDir).pipe(livereload())
-    })
-})
+gulp.task('server', gulp.parallel('sass' ,() => {
+    browserSync.init({
+        proxy: "localhost:8080/index.html"
+    });
+    gulp.watch(sassDir, gulp.parallel('sass'))
+    gulp.watch(viewDir).on('change', browserSync.reload)
+}));
+
+gulp.task('default', gulp.parallel('server'));
 

@@ -1,7 +1,46 @@
 <mvc:View  
     xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
     xmlns:mvc="sap.ui.core.mvc">
-    <ScrollContainer id="Request" horizontal="false" vertical="true" height="100%">
-		<Text text="This is the root page"></Text>
+    <ScrollContainer id="request" horizontal="false" vertical="true" height="100%">
+      <l:VerticalLayout	width="100%">
+        <FlexBox
+          height="150px"
+          width="100%"
+          justifyContent="Center"
+          alignItems="Center"
+          class="headerRequest"
+        >
+        <items>
+            <Label class="headerRequest__label" text="From: "/>
+            <Input 
+                  fieldWidth="100%"
+                  type="Text"
+                  placeholder="Origin"
+            ></Input>
+            <Label class="headerRequest__label" text="To: "/>
+            <Input 
+                  fieldWidth="100%"
+                  type="Text"
+                  placeholder="Destination"
+            ></Input>
+            <Label class="headerRequest__label" text="Start: "/>
+            <DateTimePicker 
+                  placeholder="Trip Date"
+            ></DateTimePicker>
+            <Label class="headerRequest__label" text="End: "/>
+            <DateTimePicker 
+                  placeholder="Back Date"
+            ></DateTimePicker>
+          </items>
+        </FlexBox>
+          <FlexBox
+            justifyContent="Center"
+            alignItems="Center"
+            class="headerButton"
+          >
+              <Button text="Request Travel" class="btn btn__pill"></Button>
+          </FlexBox> 
+    </l:VerticalLayout>
 	</ScrollContainer>
 </mvc:View>
